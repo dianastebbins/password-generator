@@ -10,7 +10,7 @@ function writePassword() {
 }
 
 var pwLength = 0;
-var PW_MIN = 2;
+var PW_MIN = 8;
 var PW_MAX = 128;
 var allowLower = false;
 var allowUpper = false;
