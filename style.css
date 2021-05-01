@@ -22,6 +22,13 @@ h1 {
   color: rgb(8, 175, 8);
 }
 
+#go-home {
+  position: absolute;
+  background-color: black;
+  color: rgb(37, 37, 37);
+  bottom: 10px;
+}
+
 h2 {
   background: transparent;
   color: rgb(8, 175, 8);

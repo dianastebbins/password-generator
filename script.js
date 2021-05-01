@@ -50,12 +50,21 @@ function getCriteria(){
   getCriteriaCharType();  
 }
 
+function clearCriteria(){
+  pwLength = 0;
+  allowLower = false;
+  allowUpper = false;
+  allowNumeric = false;
+  allowSpecial = false;
+}
+
 var lowerCaseOptions = "abcdefghijklmnopqrstuvwxyz";
 var upperCaseOptions = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numericOptions = "0123456789";
 var specialOptions = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~"; // "\
 
 function generatePassword() {
+  clearCriteria();
   getCriteria();
 
   // build string representing all allowed options
