@@ -46,18 +46,21 @@ function getCriteriaCharType(){
 }
 
 function getCriteria(){
-  console.log(`getCriteria`);
   getCriteriaMinMax();
   getCriteriaCharType();  
-  
 }
 
 function generatePassword() {
   getCriteria();
-  console.log("generated!!");
+
+  var newPassword = "";
+  for (let i = 0; i < pwLength; i++) {
+    newPassword += i;
+    console.log(newPassword);
+  }
   // password is generated that matches the selected criteria
 
-  return "1234-is-bad-password";
+  return newPassword;
 }
 
 // Add event listener to generate button
