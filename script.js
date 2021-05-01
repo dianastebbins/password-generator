@@ -10,7 +10,7 @@ function writePassword() {
 }
 
 var pwLength = 0;
-var PW_MIN = 8;
+var PW_MIN = 2;
 var PW_MAX = 128;
 var allowLower = false;
 var allowUpper = false;
@@ -50,16 +50,34 @@ function getCriteria(){
   getCriteriaCharType();  
 }
 
+var lowerCaseOptions = "abcdefghijklmnopqrstuvwxyz";
+var upperCaseOptions = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numericOptions = "0123456789";
+var specialOptions = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~"; // "\
+
 function generatePassword() {
   getCriteria();
 
+  // build string representing all allowed options
+  var allowedOptions = "";
+  if(allowLower) allowedOptions += lowerCaseOptions;
+  if(allowUpper) allowedOptions += upperCaseOptions;
+  if(allowNumeric) allowedOptions += numericOptions;
+  if(allowSpecial) allowedOptions += specialOptions;
+  console.log(`allowedOptions is ${allowedOptions}`);
+
   var newPassword = "";
+  var multiplier = allowedOptions.length;
   for (let i = 0; i < pwLength; i++) {
-    newPassword += i;
+    var num = Math.random() * multiplier;
+    var index = Math.floor(num);
+    // console.log(`random is ${index}`);
+
+    newPassword += allowedOptions.charAt(index);
     console.log(newPassword);
   }
-  // password is generated that matches the selected criteria
-
+  
+  // return generated password
   return newPassword;
 }
 
