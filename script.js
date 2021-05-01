@@ -12,6 +12,8 @@ function writePassword() {
 }
 
 var pwLength = 0;
+var PW_MIN = 8;
+var PW_MAX = 128;
 var allowLower = false;
 var allowUpper = false;
 var allowNumeric = false;
@@ -20,6 +22,12 @@ var allowSpecial = false;
 function getCriteriaMinMax(){
   // at least 8 characters and no more than 128 characters
   console.log(`getCriteriaMinMax`);
+  while(pwLength < PW_MIN || pwLength > PW_MAX){
+    pwLength = prompt(`Enter a password length (8 to 128 characters): `);
+    if(pwLength < PW_MIN || pwLength > PW_MAX){
+      confirm(`Length must be at least 8 and no more than 128 characters. Try again.`);
+    }
+  }
 
 }
 
