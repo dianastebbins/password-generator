@@ -4,10 +4,11 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
+  console.log(`password is ${password}`);
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
+  
 }
 
 var pwLength = 0;
@@ -40,7 +41,7 @@ function getCriteria(){
 
 function generatePassword() {
   getCriteria();
-
+  console.log("generated!!");
   // password is generated that matches the selected criteria
 
   return "1234-is-bad-password";
